@@ -1,16 +1,24 @@
 $(document).ready(function(){
      let number = 61
      let intervalId
+     let correctAnswer = 0
+     let wrongAnswer = 0
      $(".form-check").hide()
 $("#startButton").on("click", function(){
     $(this).hide()
     $(".form-check").show()
-    //var submitButton = $("<button>submit</butotn>")
-    //$(submitButton).on("click", stop())
+    
+    var submitButton = $("<button>submit</butotn>")
+    $("#submitButton").append(submitButton)
+    $(submitButton).on("click", stop)
    intervalId = setInterval(decrement, 1000)
-  
     })
-
+if($(".form-check-input").attr("value") === "option4"){
+        correctAnswer ++
+    }
+    else{
+        wrongAnswer ++
+    }
    
 
 function decrement(){
@@ -25,8 +33,10 @@ function decrement(){
 function stop(){
     clearInterval(intervalId)
     $("#time-left").hide()
-    $("#time-up").html("<h2>"+ "Time is up!" + "</h2>")
-    $("#q1").text("Correct answers")
+    $(".form-check").hide()
+    $("#time-up").html("<h2>"+ "Finished! View your results" + "</h2>")
+    $("#results").html("Correct answers: " + correctAnswer)
+    console.log(correctAnswer)
 }
 
 })
