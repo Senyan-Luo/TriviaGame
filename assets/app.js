@@ -1,9 +1,10 @@
 $(document).ready(function(){
      let number = 61
      let intervalId
-
+     $(".form-check").hide()
 $("#startButton").on("click", function(){
     $(this).hide()
+    $(".form-check").show()
     //var submitButton = $("<button>submit</butotn>")
     //$(submitButton).on("click", stop())
    intervalId = setInterval(decrement, 1000)
