@@ -15,6 +15,9 @@ $("#startButton").on("click", function(){
     if($("#exampleRadios4").is(":checked")){
     correctAnswer ++
 }
+    if($("#question2-1").is(":checked")){
+    correctAnswer ++
+}
     else{
     wrongAnswer ++
 }
