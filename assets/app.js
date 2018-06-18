@@ -10,16 +10,27 @@ $("#startButton").on("click", function(){
     
     var submitButton = $("<button>submit</butotn>")
     $("#submitButton").append(submitButton)
-    $(submitButton).on("click", stop)
-   intervalId = setInterval(decrement, 1000)
+    $(submitButton).on("click", function(){
+        
+    if($("#exampleRadios4").is(":checked")){
+    correctAnswer ++
+}
+    else{
+    wrongAnswer ++
+}
+    stop()
+
+    $("#submitButton").hide()
     })
-if($(".form-check-input").attr("value") === "option4"){
+   intervalId = setInterval(decrement, 1000)
+
+if($("#exampleRadios4").is(":checked")){
         correctAnswer ++
     }
     else{
         wrongAnswer ++
     }
-   
+    }) 
 
 function decrement(){
     number--
