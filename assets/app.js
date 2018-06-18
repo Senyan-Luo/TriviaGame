@@ -12,27 +12,24 @@ $("#startButton").on("click", function(){
     $("#submitButton").append(submitButton)
     $(submitButton).on("click", function(){
         
-    if($("#exampleRadios4").is(":checked")){
+    if($("#question1-4").is(":checked")){
     correctAnswer ++
 }
     if($("#question2-1").is(":checked")){
     correctAnswer ++
 }
-    else{
-    wrongAnswer ++
+    if($("#question3-3").is(":checked")){
+    correctAnswer ++
 }
+    wrongAnswer = (3-correctAnswer)
     stop()
+
+    
 
     $("#submitButton").hide()
     })
    intervalId = setInterval(decrement, 1000)
 
-if($("#exampleRadios4").is(":checked")){
-        correctAnswer ++
-    }
-    else{
-        wrongAnswer ++
-    }
     }) 
 
 function decrement(){
@@ -52,6 +49,7 @@ function stop(){
     $("#correctResult").html("Correct answers: " + correctAnswer)
     $("#incorrectResult").html("Incorrect answer: " + wrongAnswer)
     console.log(correctAnswer)
+    console.log(wrongAnswer)
 }
 
 })
