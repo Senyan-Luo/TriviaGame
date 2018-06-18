@@ -49,7 +49,8 @@ function stop(){
     $("#time-left").hide()
     $(".form-check").hide()
     $("#time-up").html("<h2>"+ "Finished! View your results" + "</h2>")
-    $("#results").html("Correct answers: " + correctAnswer)
+    $("#correctResult").html("Correct answers: " + correctAnswer)
+    $("#incorrectResult").html("Incorrect answer: " + wrongAnswer)
     console.log(correctAnswer)
 }
 
